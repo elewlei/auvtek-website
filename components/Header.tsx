@@ -1,6 +1,6 @@
-// client/src/components/Header.tsx
+// components/Header.tsx
 import React from 'react';
-import { Link } from 'wouter'; // 项目使用的是 wouter 路由库
+import Link from 'next/link'; // 改为 Next.js 的 Link
 
 export default function Header() {
   return (
@@ -11,13 +11,22 @@ export default function Header() {
             <span className="font-bold">OceanTech</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
-            <Link href="/products" className="transition-colors hover:text-foreground/80 text-foreground/60">
+            <Link 
+              href="/products" 
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
               Products
             </Link>
-            <Link href="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+            <Link 
+              href="/about" 
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
               About
             </Link>
-            <Link href="/contact" className="transition-colors hover:text-foreground/80 text-foreground/60">
+            <Link 
+              href="/contact" 
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
               Contact
             </Link>
           </nav>

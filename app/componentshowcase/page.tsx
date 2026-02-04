@@ -17,9 +17,9 @@ import { toast as sonnerToast } from "sonner";
 import { useTheme } from "@/contexts/ThemeContext";
 
 // 懒加载组件以提高性能
-const LazyAIChatBox = lazy(() => import("@/components/AIChatBox").then(module => ({ 
-  default: module.AIChatBox 
-})));
+//const LazyAIChatBox = lazy(() => import("@/components/AIChatBox").then(module => ({ 
+//  default: module.AIChatBox 
+//})));
 
 // 组件导入 - 只导入实际使用的组件
 import {
@@ -1539,17 +1539,7 @@ export default function ComponentsShowcase() {
                       This is a demo with simulated responses. In a real app, you'd connect it to a tRPC mutation.
                     </p>
                   </div>
-                  <Suspense fallback={<div className="h-[500px] flex items-center justify-center">Loading chat interface...</div>}>
-                    <LazyAIChatBox
-                      messages={chatMessages}
-                      onSendMessage={handleChatSend}
-                      isLoading={isChatLoading}
-                      placeholder="Try sending a message..."
-                      height="500px"
-                      emptyStateMessage="How can I help you today?"
-                      suggestedPrompts={SUGGESTED_PROMPTS}
-                    />
-                  </Suspense>
+
                 </div>
               </CardContent>
             </Card>

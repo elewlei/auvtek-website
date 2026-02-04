@@ -159,14 +159,19 @@ export default function Contact() {
     });
   };
 
-  // 防抖函数
-  const debounce = (func: Function, wait: number) => {
-    let timeout: NodeJS.Timeout;
-    return (...args: any[]) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), wait);
-    };
+
+// 防抖函数 - 修复版本
+const debounce = <T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): ((...args: Parameters<T>) => void) => {
+  let timeout: NodeJS.Timeout | undefined;
+  
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
   };
+};
 
   // 表单提交处理（使用防抖）
   const handleSubmit = debounce(async (e: React.FormEvent) => {

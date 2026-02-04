@@ -1,4 +1,4 @@
-// client/src/components/Footer.tsx
+// components/Footer.tsx
 import React from 'react';
 
 export default function Footer() {

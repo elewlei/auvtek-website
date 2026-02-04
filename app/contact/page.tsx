@@ -160,49 +160,51 @@ export default function Contact() {
   };
 
 
-// 防抖函数 - 修复版本
-const debounce = <T extends (...args: any[]) => any>(
-  func: T,
-  wait: number
-): ((...args: Parameters<T>) => void) => {
-  let timeout: NodeJS.Timeout | undefined;
+
+  // 替换第114-140行的 handleSubmit 函数
+
+// 在 contact/page.tsx 中，替换 handleSubmit 函数
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
   
-  return (...args: Parameters<T>) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), wait);
-  };
+  // 验证表单
+  if (!validateForm()) {
+    return;
+  }
+  
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || 'Failed to send message');
+    }
+
+    toast.success(result.message || "Thank you for your inquiry! We'll be in touch within 24 hours.");
+    
+    // 重置表单
+    resetForm();
+    
+  } catch (error) {
+    console.error('Form submission error:', error);
+    toast.error(
+      error instanceof Error 
+        ? `Failed to send message: ${error.message}` 
+        : "Failed to send message. Please try again."
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
 };
-
-  // 表单提交处理（使用防抖）
-  const handleSubmit = debounce(async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // 验证表单
-    if (!validateForm()) {
-      return;
-    }
-    
-    setIsSubmitting(true);
-
-    try {
-      // 模拟表单提交（实际应用中替换为 API 调用）
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      
-      toast.success("Thank you for your inquiry! We'll be in touch within 24 hours.");
-      
-      // 重置表单
-      resetForm();
-    } catch (error) {
-      console.error('Form submission error:', error);
-      toast.error(
-        error instanceof Error 
-          ? `Failed to send message: ${error.message}` 
-          : "Failed to send message. Please try again."
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  }, 300);
 
   // 清除表单
   const handleClearForm = () => {

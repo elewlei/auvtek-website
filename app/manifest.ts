@@ -1,0 +1,31 @@
+// app/manifest.ts
+import { MetadataRoute } from 'next'
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: 'AUVTEK | Advanced Underwater Autonomous Technology & Acoustic Solutions',
+    short_name: 'AUVTEK',
+    description: 'Leading manufacturer of Autonomous Underwater Vehicles (AUV), Unmanned Underwater Vehicles (UUV), and high-resolution sonar systems.',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#3b82f6', // 建议改为你网站的主色调
+    icons: [
+      {
+        src: '/logo-auvtek.ico',
+        sizes: 'any',
+        type: 'image/x-icon',
+      },
+      {
+        src: '/AUV192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        src: '/Sonar512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
+  }
+}

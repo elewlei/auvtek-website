@@ -6,6 +6,13 @@ import Link from 'next/link';
 import { ArrowRight, Zap, Waves, Download, Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 
+// 导入Swiper相关
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 // 静态文件数据示例
 const STATIC_AUV_FILES = [
   { id: 1, name: 'AUV_Technical_Specifications.pdf', size: '2.4 MB', url: '#' },
@@ -246,12 +253,71 @@ export default function Products() {
                   </Button>
                 </Link>
               </div>
-              <div
-                className="h-96 rounded-lg bg-cover bg-center shadow-lg"
-                style={{
-                  backgroundImage: "url('/images/underwater-research-platform.jpg')",
-                }}
-              ></div>
+              
+              {/* AUV/UUV 图片区域 - 替换为Swiper轮播 */}
+              <div className="relative">
+                <div className="h-96 rounded-lg shadow-lg overflow-hidden">
+                  <Swiper
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: false,
+                    }}
+                    pagination={{
+                      clickable: true,
+                      dynamicBullets: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="h-full"
+                  >
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/AUV-exploration-01.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Underwater research platform"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/AUV-exploration-02.jpg')",
+                        }}
+                        role="img"
+                        aria-label="AUV in deep sea exploration"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/AUV-exploration-03.jpg')",
+                        }}
+                        role="img"
+                        aria-label="AUV operations in mission"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/AUV-exploration-04.jpg')",
+                        }}
+                        role="img"
+                        aria-label="AUV deployment process"
+                      />
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+                <p className="text-xs text-muted-foreground mt-2 text-center">
+                  AUVTEK autonomous vehicles in action
+                </p>
+              </div>
             </div>
 
             {/* AUV Models */}
@@ -303,43 +369,7 @@ export default function Products() {
             </div>
 
             {/* AUV Resources Section */}
-            <div className="bg-muted/30 border border-border rounded-lg p-8 mb-16">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-primary mb-2">AUV Documentation</h3>
-                  <p className="text-muted-foreground">
-                    Technical specifications, user guides, and case studies
-                  </p>
-                </div>
-                {/* 已移除 FileUploadDialog 组件，因为不需要上传功能 */}
-              </div>
-              {/* 静态文件列表展示 */}
-              {auvFiles.length > 0 ? (
-                <div className="space-y-3">
-                  {auvFiles.map((file) => (
-                    <div
-                      key={file.id}
-                      className="flex items-center justify-between p-4 bg-white border border-border rounded hover:bg-muted/50"
-                    >
-                      <div className="flex items-center gap-3">
-                        <Download className="w-4 h-4 text-muted-foreground" />
-                        <div>
-                          <p className="font-medium">{file.name}</p>
-                          <p className="text-sm text-muted-foreground">{file.size}</p>
-                        </div>
-                      </div>
-                      <Button variant="ghost" size="sm" asChild>
-                        <a href={file.url} download>Download</a>
-                      </Button>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-muted-foreground text-center py-8">
-                  No documentation available yet
-                </p>
-              )}
-            </div>
+
           </div>
         </section>
 
@@ -347,12 +377,142 @@ export default function Products() {
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-              <div
-                className="h-96 rounded-lg bg-cover bg-center shadow-lg order-2 lg:order-1"
-                style={{
-                  backgroundImage: "url('/images/sonar-imaging-visualization.jpg')",
-                }}
-              ></div>
+              {/* Acoustic Sensors 图片区域 - 替换为Swiper轮播 */}
+              <div className="relative order-2 lg:order-1">
+                <div className="h-96 rounded-lg shadow-lg overflow-hidden">
+                  <Swiper
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: false,
+                    }}
+                    pagination={{
+                      clickable: true,
+                      dynamicBullets: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="h-full"
+                  >
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/Hydrophone.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Sonar imaging visualization"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/Transducer00.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Acoustic sensors technology"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/Transducer01.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Sensor deployment in field"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/Transducer02.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Advanced sonar system"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/Transducer03.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Advanced sonar system"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/Multi-beam.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Advanced sonar system"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/AVS.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Advanced sonar system"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/Chirp.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Advanced sonar system"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/SAS-image01.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Advanced sonar system"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/SAS-image02.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Advanced sonar system"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div
+                        className="h-full w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: "url('/images/SAS-image03.jpg')",
+                        }}
+                        role="img"
+                        aria-label="Advanced sonar system"
+                      />
+                    </SwiperSlide>
+
+                  </Swiper>
+                </div>
+                <p className="text-xs text-muted-foreground mt-2 text-center">
+                  AUVTEK acoustic sensors and sonar technology
+                </p>
+              </div>
+              
               <div className="order-1 lg:order-2">
                 <h2 className="text-4xl font-bold text-primary mb-6">
                   Acoustic Sensors & Transducers
@@ -402,11 +562,11 @@ export default function Products() {
               {[
                 {
                   type: "Hydrophones",
-                  specs: ["Frequency: 1Hz - 170kHz", "Sensitivity: -200 to -120 dB", "Depth: Up to 6,000m"],
+                  specs: ["Frequency: 1Hz - 170kHz", "Sensitivity: -190 dB and above", "Depth: Up to 6,000m"],
                 },
                 {
                   type: "Piezo-Electric Single Crystal Transducers",
-                  specs: ["Frequency: 12kHz - 2MHz", "Compact Design (24mm thickness)", "Power Efficient (180 dB source level)"],
+                  specs: ["Frequency: 10kHz - 80kHz", "Compact Design (20mm thickness)", "Power Efficient (>206 dB source level)"],
                 },
                 {
                   type: "Side-Scan Sonar",
@@ -418,7 +578,7 @@ export default function Products() {
                 },
                 {
                   type: "Dual Frequency Synthetic Aperture Sonar (DFSAS)",
-                  specs: ["Ultra-High Resolution: 3cm x 3cm", "Dual Frequency (350kHz + 900kHz)", "Advanced Seafloor Imaging"],
+                  specs: ["Ultra-High Resolution: 2cm x 2cm", "Dual Frequency (15kHz / 150kHz)", "Advanced Seafloor Imaging， Buried Objects"],
                 },
                 {
                   type: "Acoustic Vector Sensors",
@@ -443,43 +603,7 @@ export default function Products() {
             </div>
 
             {/* Sensor Resources Section */}
-            <div className="bg-white border border-border rounded-lg p-8">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-primary mb-2">Sensor Documentation</h3>
-                  <p className="text-muted-foreground">
-                    Technical datasheets, installation guides, and application notes
-                  </p>
-                </div>
-                {/* 已移除 FileUploadDialog 组件 */}
-              </div>
-              {/* 静态文件列表展示 */}
-              {sensorFiles.length > 0 ? (
-                <div className="space-y-3">
-                  {sensorFiles.map((file) => (
-                    <div
-                      key={file.id}
-                      className="flex items-center justify-between p-4 bg-muted/30 border border-border rounded hover:bg-muted/50"
-                    >
-                      <div className="flex items-center gap-3">
-                        <Download className="w-4 h-4 text-muted-foreground" />
-                        <div>
-                          <p className="font-medium">{file.name}</p>
-                          <p className="text-sm text-muted-foreground">{file.size}</p>
-                        </div>
-                      </div>
-                      <Button variant="ghost" size="sm" asChild>
-                        <a href={file.url} download>Download</a>
-                      </Button>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-muted-foreground text-center py-8">
-                  No documentation available yet
-                </p>
-              )}
-            </div>
+
           </div>
         </section>
 

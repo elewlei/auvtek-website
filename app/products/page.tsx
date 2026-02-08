@@ -210,13 +210,13 @@ export default function Products() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
               <div>
                 <h2 className="text-4xl font-bold text-primary mb-6">
-                  Autonomous Underwater Vehicles (AUV/UUV)
+                Autonomous Underwater Vehicles (AUV/UUV): Advanced Platforms for Deep Sea Exploration
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Our AUV and UUV platforms represent the pinnacle of autonomous underwater technology. Designed for extended missions, these vehicles operate independently with minimal human intervention, making them ideal for deep-sea exploration, research, and commercial operations.
+                AUVTEK designs and manufactures state-of-the-art <strong>Autonomous Underwater Vehicles (AUV)</strong> and <strong>Unmanned Underwater Vehicles (UUV)</strong> for the most demanding underwater missions. Our autonomous systems are engineered for extended range, deep-depth operations, and reliable data collection in environments inaccessible to humans.
                 </p>
                 <p className="text-lg text-muted-foreground mb-6">
-                  AUVs are fully autonomous systems that execute pre-programmed missions. UUVs can be autonomous or remotely operated, providing flexibility for various mission profiles. Both integrate advanced sonar systems, navigation sensors, and modular payload bays.
+                Whether for oceanographic <strong>scientific research</strong>, detailed seafloor mapping with our integrated <strong>sonar systems</strong>, or long-duration <strong>offshore infrastructure inspection</strong>, AUVTEK's AUV/UUV platforms provide the autonomy and payload flexibility required for success.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
@@ -514,12 +514,17 @@ export default function Products() {
               </div>
               
               <div className="order-1 lg:order-2">
+                
                 <h2 className="text-4xl font-bold text-primary mb-6">
-                  Acoustic Sensors & Transducers
+                Acoustic Sensors & Sonar Systems: Precision Underwater Sensing and Imaging
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Our comprehensive range of acoustic sensors delivers precision and reliability for underwater applications. From hydrophones to synthetic aperture sonar systems, we provide the acoustic foundation for advanced underwater exploration.
+                Complementing our autonomous vehicles, AUVTEK's suite of high-performance <strong>acoustic sensors</strong>, <strong>hydrophones</strong>, and advanced <strong>sonar systems</strong> delivers unparalleled clarity and data accuracy beneath the waves.
                 </p>
+                <p className="text-lg text-muted-foreground mb-6">
+                Our technologies, including <strong>Synthetic Aperture Sonar (SAS)</strong> for centimeter-resolution imaging and ruggedized <strong>piezo-electric transducers</strong>, are vital tools for <strong>underwater detection</strong>, environmental monitoring, and naval defense applications.
+                </p>
+
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
                     <Waves className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />

@@ -40,7 +40,7 @@ const VALUES: ValueCard[] = [
   {
     icon: Zap,
     title: "Innovation",
-    desc: "Continuously pushing technological boundaries to create next-generation solutions",
+    desc: "Continuously pushing the boundaries of autonomous navigation and underwater acoustic sensing to create next-generation AUV/UUV and sonar solutions.",
   },
   {
     icon: Award,
@@ -61,21 +61,21 @@ const VALUES: ValueCard[] = [
 
 const CAPABILITIES: Capability[] = [
   {
-    title: "Autonomous Systems Lab",
+    title: "Autonomous Vehicle & Navigation Lab",
     items: [
-      "Vehicle design and prototyping",
-      "Navigation system development",
-      "Autonomous control algorithms",
-      "Mission planning software",
+      "AUV/UUV vehicle design and prototyping",
+      "Underwater navigation system development",
+      "Autonomous mission control algorithms",
+      "Sonar system integration and testing",
     ],
   },
   {
-    title: "Acoustic Research Center",
+    title: "Advanced Acoustic & Sonar Research",
     items: [
-      "Hydrophone design and calibration",
-      "Sonar system development",
-      "Signal processing research",
-      "Acoustic characterization",
+      "Hydrophone and transducer design and calibration",
+      "High-resolution sonar system development",
+      "Synthetic Aperture Sonar (SAS) signal processing",
+      "Acoustic Vector Sensor characterization",
     ],
   },
   {
@@ -228,21 +228,9 @@ export default function About() {
 
   return (
     <>
-      <Head>
-        <title>About AUVTEK - Leading Underwater Technology Innovation</title>
-        <meta 
-          name="description" 
-          content="Learn about AUVTEK's mission, values, and capabilities in underwater autonomous technology and acoustic sensing. Join our mission to advance ocean exploration." 
-        />
-        <meta 
-          name="keywords" 
-          content="AUVTEK, underwater technology, autonomous vehicles, acoustic sensing, marine research, ocean exploration" 
-        />
-        <meta property="og:title" content="About AUVTEK - Underwater Technology Leaders" />
-        <meta property="og:description" content="Leading innovation in underwater autonomous technology and acoustic sensing" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://auvtek.com/about" />
-      </Head>
+
+
+
 
       <div className="w-full" role="main">
         {/* 固定导航栏 */}
@@ -385,68 +373,161 @@ export default function About() {
             </div>
           </section>
 
-          {/* Mission Section */}
-          <section 
-            className="py-20 bg-white"
-            aria-labelledby="mission-title"
-          >
-            <div className="container mx-auto px-4">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h2 
-                    id="mission-title" 
-                    className="text-4xl font-bold text-primary mb-6"
-                  >
-                    Our Mission
-                  </h2>
-                  <div className="space-y-6">
-                    <p className="text-lg text-muted-foreground">
-                      At AUVTEK, we're committed to advancing underwater exploration and research through cutting-edge autonomous platforms and acoustic sensing technology. We believe that understanding the ocean is crucial for scientific discovery, environmental protection, and technological innovation.
-                    </p>
-                    <p className="text-lg text-muted-foreground">
-                      Our mission is to provide researchers, explorers, and industries with the most reliable and innovative tools for underwater discovery, enabling them to push the boundaries of what's possible in the deep.
-                    </p>
-                  </div>
-                  
-                  {/* 统计数据 */}
-                  <div 
-                    className="flex gap-6 mt-8 pt-8 border-t border-border"
-                    role="list"
-                    aria-label="Company statistics"
-                  >
-                    {memoizedStatistics.map((stat, index) => (
-                      <div 
-                        key={index} 
-                        role="listitem"
-                        className="flex-1"
-                      >
-                        <StatCard {...stat} />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* 图片区域 */}
-                <div className="relative">
-                  <div
-                    className="h-96 rounded-lg bg-cover bg-center shadow-lg relative overflow-hidden"
-                    style={{
-                      backgroundImage: "url('/images/deep-ocean-exploration-01.jpg')",
-                    }}
-                    role="img"
-                    aria-label="Deep ocean exploration with AUVTEK technology"
-                  >
-                   {/* 图片加载时的占位符 */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 animate-pulse"></div>
-                  </div>
+          
+{/* Mission Section */}
+<section 
+  className="py-20 bg-white"
+  aria-labelledby="mission-title"
+>
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 
+          id="mission-title" 
+          className="text-4xl font-bold text-primary mb-6"
+        >
+          Our Mission
+        </h2>
+        
+<div className="space-y-6">
+  <p className="text-lg text-muted-foreground">
+    At AUVTEK, we are the driving force behind the next generation of <strong>underwater autonomous and sonar technology</strong>. As a leading developer of <strong>Autonomous Underwater Vehicles (AUV)</strong> and <strong>Unmanned Underwater Vehicles (UUV)</strong>, combined with our cutting-edge <strong>Underwater Sonar</strong> and <strong>Acoustic Sensor</strong> systems, we empower scientists, engineers, and industries to unlock the secrets of the deep.
+  </p>
+  <p className="text-lg text-muted-foreground">
+    Our mission is twofold: to engineer the most reliable and capable <strong>underwater exploration platforms</strong>, and to provide the high-fidelity sensing tools—like our <strong>Synthetic Aperture Sonar (SAS), Side-scan Sonar, Ultra-Wide Band Transducers</strong>—that turn data into discovery. We believe that advancing <strong>underwater technology</strong> is essential for oceanographic research, environmental stewardship, and the future of marine operations.
+  </p>
+</div>
 
-                  <p className="text-xs text-muted-foreground mt-2">
-                    Image: AUVTEK autonomous vehicle in deep ocean exploration mission
-                  </p>
-                </div>
-              </div>
+        
+        {/* 统计数据 */}
+        <div 
+          className="flex gap-6 mt-8 pt-8 border-t border-border"
+          role="list"
+          aria-label="Company statistics"
+        >
+          {memoizedStatistics.map((stat, index) => (
+            <div 
+              key={index} 
+              role="listitem"
+              className="flex-1"
+            >
+              <StatCard {...stat} />
             </div>
-          </section>
+          ))}
+        </div>
+      </div>
+      
+      {/* 图片区域 - Swiper轮播 */}
+      <div className="relative">
+        <div className="h-96 rounded-lg shadow-lg overflow-hidden">
+          <Swiper
+            spaceBetween={0}
+            slidesPerView={1}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="h-full"
+          >
+            <SwiperSlide>
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/sonar-imaging-visualization.jpg')",
+                }}
+                role="img"
+                aria-label="Deep ocean exploration with AUVTEK technology"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/Fieldtest01.jpg')",
+                }}
+                role="img"
+                aria-label="Underwater research platform"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/Fieldtest02.jpg')",
+                }}
+                role="img"
+                aria-label="Acoustic sensors technology"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/Fieldtest03.jpg')",
+                }}
+                role="img"
+                aria-label="AUV operations in deep sea"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/SAS-image01.jpg')",
+                }}
+                role="img"
+                aria-label="AUV operations in deep sea"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/SAS-image02.jpg')",
+                }}
+                role="img"
+                aria-label="AUV operations in deep sea"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/SAS-image03.jpg')",
+                }}
+                role="img"
+                aria-label="AUV operations in deep sea"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/SAS-image04.jpg')",
+                }}
+                role="img"
+                aria-label="AUV operations in deep sea"
+              />
+            </SwiperSlide>
+
+          </Swiper>
+        </div>
+        
+        <p className="text-xs text-muted-foreground mt-2">
+          AUVTEK technology in action
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
           {/* Values Section */}
           <section 
@@ -588,7 +669,7 @@ export default function About() {
                   className="text-white/80 hover:text-white transition-colors text-sm flex items-center gap-1"
                   aria-label="View our products"
                 >
-                  View Products <ChevronRight className="w-3 h-3" />
+                  View AUV & Sonar Products <ChevronRight className="w-3 h-3" />
                 </Link>
                 <span className="text-white/50">•</span>
                 <Link 
@@ -596,7 +677,7 @@ export default function About() {
                   className="text-white/80 hover:text-white transition-colors text-sm flex items-center gap-1"
                   aria-label="Explore our solutions"
                 >
-                  Explore Solutions <ChevronRight className="w-3 h-3" />
+                  Explore Industry Solutions <ChevronRight className="w-3 h-3" />
                 </Link>
                 <span className="text-white/50">•</span>
                 <Link 

@@ -368,19 +368,6 @@ const handleSubmit = async (e: React.FormEvent) => {
             </div>
           </section>
 
-{/* 在 Page Header section 之后，Contact Section 之前添加 */}
-<section className="py-12 bg-white">
-  <div className="container mx-auto px-4 text-center max-w-3xl">
-    <p className="text-lg text-muted-foreground mb-4">
-      As a leading provider of <strong>Autonomous Underwater Vehicles (AUV)</strong>, <strong>UUV</strong> platforms, and cutting-edge <strong>underwater sonar system</strong> technology, the team at AUVTEK is here to support your marine operations, research projects, and custom solution needs.
-    </p>
-    <p className="text-lg text-muted-foreground">
-      Contact us for technical specifications of our <strong>underwater acoustic sensors</strong>, to discuss a <strong>custom R&D</strong> project, or to learn how our systems can enhance your underwater acoustic capabilities.
-    </p>
-  </div>
-</section>
-
-
           {/* Contact Section */}
           <section className="py-20 bg-white">
             <div className="container mx-auto px-4">

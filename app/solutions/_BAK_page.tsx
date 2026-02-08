@@ -47,8 +47,8 @@ export default function Solutions() {
   const solutions = [
     {
       icon: Microscope,
-      title: "Scientific Research with AUV & Underwater Sonar",
-      description: "Utilize our Autonomous Underwater Vehicles (AUV) and high-resolution sonar for deep-sea oceanographic and marine biology studies.",
+      title: "Scientific Research",
+      description: "Deep-sea oceanographic studies and marine biology research",
       image: "/images/scientific-research.jpg",
       details: [
         "Autonomous data collection in extreme environments",
@@ -59,8 +59,8 @@ export default function Solutions() {
     },
     {
       icon: BookOpen,
-      title: "Underwater Imaging & Seafloor Mapping Solutions",
-      description: "Achieve centimeter-accurate seafloor mapping, deeply buried objects detection and detailed imaging with our Synthetic Aperture Sonar (SAS) and multi-beam systems.",
+      title: "Underwater Imaging & Mapping",
+      description: "High-resolution sonar and camera systems for detailed surveys",
       image: "/images/Imaging-Mapping.jpg",
       details: [
         "Synthetic aperture sonar for precise imaging",
@@ -71,8 +71,8 @@ export default function Solutions() {
     },
     {
       icon: AlertCircle,
-      title: "Environmental Monitoring with Acoustic Transducer",
-      description: "Uses active and passive acoustic technologies to map underwater habitats, track marine life, detect hazards, and assess water quality. By transmitting sound waves and analyzing echoes (active) or listening for noises (passive), these systems provide high-resolution data on seabed, water column, and subsea structures. ",
+      title: "Environmental Monitoring",
+      description: "Marine ecosystem and pollution tracking systems",
       image: "/images/Environment Monitoring.jpg",
       details: [
         "Acoustic marine life detection",
@@ -83,8 +83,8 @@ export default function Solutions() {
     },
     {
       icon: Wrench,
-      title: "Offshore Operations Critical Support",
-      description: "Acoustic sensors are fundamental to modern offshore operations, providing non-invasive means for structural monitoring, environmental protection, and asset management in harsh maritime environments. Acoustic sensors can also detect early-stage damage in critical infrastructure that traditional inspections might miss.",
+      title: "Offshore Operations",
+      description: "Inspection and maintenance support for subsea infrastructure",
       image: "/images/Offshore-Operations.jpg",
       details: [
         "Pipeline and cable inspection",
@@ -95,8 +95,8 @@ export default function Solutions() {
     },
     {
       icon: Fish,
-      title: "Active Acoustic Fishing & Stock Assessment",
-      description: "Active Acoustic sensors serve as a cornerstone of modern fisheries science, providing non-invasive, quantitative, and rapid methods for both monitoring individual fish and estimating large-scale population biomass",
+      title: "Fishing & Stock Assessment",
+      description: "Fish detection and population monitoring systems",
       image: "/images/fishing-stock.jpg",
       details: [
         "Fish species identification",
@@ -107,8 +107,8 @@ export default function Solutions() {
     },
     {
       icon: Shield,
-      title: "Integrated Underwater Acoustic Defense & Security",
-      description: "Underwater acoustic sensors are the primary tools for subsea defense and security, as water quickly absorbs the radio and optical signals typically used on land. These systems detect, track, and classify threats like submarines, uncrewed vehicles (UUVs), and divers. Core Sensor Technologies include: Hydrophone, Passive Sonar, Active Sona, Distributed Acoustic Sensing (DAS) and Acoustic Vector Sensor",
+      title: "Defense & Security",
+      description: "Naval and underwater surveillance solutions",
       image: "/images/Defense-Security.jpg",
       details: [
         "Underwater threat detection",
